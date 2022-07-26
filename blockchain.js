@@ -27,6 +27,8 @@ class Blockchain {
     // eslint-disable-next-line no-plusplus
     for (let i = 1; i < chain.length; i++) {
       const block = chain[i];
+      const previousHash = chain[i - 1].hash;
+      if (previousHash !== block.lastHash) return false;
       const hash = cryptoHash(block.timestamp, block.lastHash, block.data);
       if (hash !== block.hash) return false;
     }
