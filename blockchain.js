@@ -20,7 +20,7 @@ class Blockchain {
 
   /*
     @func isValidChain function is to perform validation for the blockchain
-*/
+  */
   static isValidChain(chain) {
     if (JSON.stringify(chain[0]) !== JSON.stringify(Block.genesis())) return false;
     // eslint-disable-next-line no-restricted-syntax
